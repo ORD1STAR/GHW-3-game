@@ -33,7 +33,7 @@ print(name, "is a superhero ... he is so strong ... WOW")
 print("OH mY goD SoMeoNe juSt kiDnAPpeD his moM !!")
 print("He have to save her !")
 print("after 37 years of searching he found out that she was at the top of a long tower !!!!")
-print("this tower contains 30 floors and every floor contain a certain amount of enemies")
+print("this tower contains 30 floors and every floor contains a certain amount of enemies")
 print(" ")
 print(" ")
 input()
@@ -41,11 +41,12 @@ input()
 while playing:
     os.system("cls")
     floor += 1
-    if floor==2: items.append("Sword"); print("========== You found a sword ==========")
+    if floor==2: items.append("Sword");     print("========== You found a sword ==========")
     if floor==5: item.append("Magic Wand"); print("======= You found a Magic Wand =======")
     round = True
-    e_health = 50 + 10*floor
-    e_attack = 5 + 5*floor
+    
+    e_health = 500 if floor==30 else 50 + 10*floor
+    e_attack = 200 if floor==30 else 5 + 5*floor
     
     print(name, "entered the", floor, ("st" if floor ==
           1 else "nd" if floor == 2 else "rd" if floor == 3 else "th"), "floor !")
@@ -109,6 +110,12 @@ while playing:
             break
         
     if health>0: 
+        if floor == 30:
+            os.system("cls")
+            print("YOU WOOOOONNNNN")
+            print("you can take your mom's squeletton back home !!!!!")
+            print("after 37 years...")
+            break
         print("------ITEM SHOP-------")
 
         item_list = [
