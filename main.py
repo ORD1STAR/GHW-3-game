@@ -164,7 +164,7 @@ while playing:
         if item_c[m-1] == 3:
             attack += 5
         if item_c[m-1] == 4:
-            mana += 50
+            max_mana += 50
         if item_c[m-1] == 5:
             sword_ratio += 0.1
         if item_c[m-1] == 6:
