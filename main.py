@@ -36,17 +36,17 @@ print("after 37 years of searching he found out that she was at the top of a lon
 print("this tower contains 30 floors and every floor contain one enemy ... every floor gets harder lol")
 print(" ")
 print(" ")
-input("press enter to continue")
+input("press enter to continue: ")
 
 while playing:
     os.system("cls")
     floor += 1
     if floor==2: items.append("Sword");     print("========== You found a sword ==========")
-    if floor==5: item.append("Magic Wand"); print("======= You found a Magic Wand =======")
+    if floor==5: items.append("Magic Wand"); print("======= You found a Magic Wand =======")
     round = True
     
-    e_health = 500 if floor==30 else 50 + 10*floor
-    e_attack = 200 if floor==30 else 5 + 5*floor
+    e_health = 300 if floor==30 else 50 + 5*floor
+    e_attack = 100 if floor==30 else 5 + 2*floor
     
     print(name, "entered the", floor, ("st" if floor ==
           1 else "nd" if floor == 2 else "rd" if floor == 3 else "th"), "floor !")
@@ -82,7 +82,7 @@ while playing:
                 print("OH NO ! you are so tired ! you dealt 0 Damages :((")
         elif choix[c-1] == 3:
             if mana >= 50:
-                e_health -= 100 + magic_ratio
+                e_health -= 60 + magic_ratio
                 mana -= 50
                 print("You attacked using your magic wand !!!!!!!!**!**!*!*!**!*!!")
             else:
@@ -153,7 +153,7 @@ while playing:
         if shop.__contains__("Magic Wand Upgrade"):
             item_c.append(6)
             print(str(len(item_c)) + "- Magic Wand Upgrade (+20 of Magic Wand damage)")
-        m = int(input("press enter to continue"))
+        m = int(input("press enter to continue: "))
 
         if item_c[m-1] == 0:
             health = max_health
@@ -168,11 +168,13 @@ while playing:
         if item_c[m-1] == 5:
             sword_ratio += 0.1
         if item_c[m-1] == 6:
-            magic_ratio += 20
+            magic_ratio += 15
         item_c.clear()
         mana = max_mana
         energy = 100
     else:
+        print("YOU DIED :o")
+        print("You are in the " + str(floor) + " floor")
         floor = 0
         health = 100
         max_health = 100
@@ -184,5 +186,4 @@ while playing:
         sword_ratio = 1.2
         magic_ratio = 0
         items.clear()
-        print("YOU DIED :o")
-        input("press enter to continue")
+        input("press enter to continue: ")
