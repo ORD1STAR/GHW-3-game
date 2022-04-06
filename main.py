@@ -33,10 +33,10 @@ print(name, "is a superhero ... he is so strong ... WOW")
 print("OH mY goD SoMeoNe juSt kiDnAPpeD his moM !!")
 print("He have to save her !")
 print("after 37 years of searching he found out that she was at the top of a long tower !!!!")
-print("this tower contains 30 floors and every floor contains a certain amount of enemies")
+print("this tower contains 30 floors and every floor contain one enemy ... every floor gets harder lol")
 print(" ")
 print(" ")
-input()
+input("press enter to continue")
 
 while playing:
     os.system("cls")
@@ -50,7 +50,7 @@ while playing:
     
     print(name, "entered the", floor, ("st" if floor ==
           1 else "nd" if floor == 2 else "rd" if floor == 3 else "th"), "floor !")
-    print("there is 1 enemie !")
+    print("there is 1 enemy !")
     while round:
         if e_health <= 0 : break
         stats()
@@ -68,8 +68,8 @@ while playing:
         if items.__contains__("Magic Wand"):
             print(str(len(choix)+1)+"- attack with your Magic Wand")
             choix.append(3)
-        c = int(input("Votre choix: "))
-        if c > len(choix): print("ERROR")
+        c = int(input("Your attack: "))
+        if c > len(choix) or c <= 0: print("ERROR")
         elif c == 1:
             e_health -= attack
             print("You attacked using your hands")
@@ -153,7 +153,7 @@ while playing:
         if shop.__contains__("Magic Wand Upgrade"):
             item_c.append(6)
             print(str(len(item_c)) + "- Magic Wand Upgrade (+20 of Magic Wand damage)")
-        m = int(input())
+        m = int(input("press enter to continue"))
 
         if item_c[m-1] == 0:
             health = max_health
@@ -185,4 +185,4 @@ while playing:
         magic_ratio = 0
         items.clear()
         print("YOU DIED :o")
-        input()
+        input("press enter to continue")
